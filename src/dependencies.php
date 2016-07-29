@@ -17,3 +17,8 @@ $container['logger'] = function ($c) {
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], Monolog\Logger::DEBUG));
     return $logger;
 };
+
+//Controllers
+$container['PagSeguroController'] = function () {
+  return new Controllers\PagSeguroController($container);
+};
