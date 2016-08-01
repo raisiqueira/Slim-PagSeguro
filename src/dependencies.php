@@ -19,6 +19,14 @@ $container['logger'] = function ($c) {
 };
 
 //Controllers
+$container['HomeController'] = function () {
+  return new Controllers\HomeController($container);
+};
+
 $container['PagSeguroController'] = function () {
   return new Controllers\PagSeguroController($container);
+};
+
+$container['OrdersController'] = function () {
+  return new Controllers\OrdersController($container);
 };

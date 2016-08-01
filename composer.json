@@ -24,6 +24,7 @@
         "slim/php-view": "^2.0",
         "monolog/monolog": "^1.17",
         "pagseguro/php": "2.7.1",
-        "vlucas/phpdotenv": "^2.3"
+        "vlucas/phpdotenv": "^2.3",
+        "tuupola/cors-middleware": "^0.5.1"
     }
 }
