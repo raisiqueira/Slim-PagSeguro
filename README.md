@@ -1,18 +1,22 @@
-# Slim Framework 3 Skeleton Application
+# Slim Framework 3 Skeleton Application + PagSeguro Lib
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
-
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+Aplicação simples para geração do Token para pagamentos no PagSeguro (método transparente) e envio dos dados gerados via front-end.
 
 ## Install the Application
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+Clone o repositório e rode um `composer install`.
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+* Sete o virtual host para a pasta `public/`;
+* Garanta que a pasta `logs/` está com permissões de escrita;
+* Configure o arquivo `src/middleware.php` com suas configurações de [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS);
+* Edite o arquivo `.env.example` para `.env` e preencha com seus dados do PagSeguro.
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+### Rotas
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
+* `GET` */session*  - Rota para gerar Token do PagSeguro | *Retorno* `JSON`.
+* `POST` */order*   - Rota para enviar os dados para o PagSeguro.
 
-That's it! Now go build something cool.
+É isso aí! Agora é só construir algo legal com essa base!
+
+* [Documentação PagSeguro](https://pagseguro.uol.com.br/v2/guia-de-integracao/documentacao-da-biblioteca-pagseguro-em-php.html#!rmcl).
+* [Documentação do Slim Framework](http://www.slimframework.com/docs/).
