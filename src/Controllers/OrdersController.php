@@ -108,6 +108,5 @@ class OrdersController {
       } catch (PagSeguroServiceException $e) {
           die($e->getMessage());
       }
-      return $res->withHeader('Content-type', 'application/json');
   }
 }
