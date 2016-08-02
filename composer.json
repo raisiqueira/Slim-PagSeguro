@@ -26,5 +26,9 @@
         "pagseguro/php": "2.7.1",
         "vlucas/phpdotenv": "^2.3",
         "tuupola/cors-middleware": "^0.5.1"
+    },
+
+    "scripts": {
+      "serve": "php -S 0.0.0.0:8080 -t public/ public/index.php"
     }
 }
