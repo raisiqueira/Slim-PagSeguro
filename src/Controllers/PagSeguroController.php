@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-final class PagSeguroController {
+class PagSeguroController {
 
   protected $ci;
 

@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-final class HomeController {
+class HomeController {
 
   protected $ci;
 
