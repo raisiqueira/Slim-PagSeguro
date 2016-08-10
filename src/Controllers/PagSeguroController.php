@@ -31,10 +31,7 @@ class PagSeguroController {
 
     } else {
       $res = $res->withStatus(403);
-      $data = [
-        'message' => 'Não Autorizado!'
-      ];
-
+      
       $newResponse = $res->withJson($data);
       return $res->withHeader('Content-type', 'application/json');
     }
