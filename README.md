@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/raisiqueira/Slim-PagSeguro.svg?branch=master)](https://travis-ci.org/raisiqueira/Slim-PagSeguro)
+
 # Slim Framework 3 Skeleton Application + PagSeguro Lib
 
 Aplicação simples para geração do Token para pagamentos no PagSeguro (método transparente) e envio dos dados gerados via front-end.
