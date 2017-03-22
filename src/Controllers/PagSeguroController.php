@@ -2,39 +2,40 @@
 
 namespace Controllers;
 
-class PagSeguroController {
+class PagSeguroController
+{
+    protected $ci;
 
-  protected $ci;
-
-  public function __construct($ci) {
-    $this->ci = $ci;
-  }
+    public function __construct($ci)
+    {
+        $this->ci = $ci;
+    }
 
   // Return Session Id PagSeguro
-  public function SessionId ($req, $res) {
-
-    if( $res->withHeader(201) ) {
+  public function SessionId($req, $res)
+  {
+      if ($res->withHeader(201)) {
 
       // PagSeguro Libraries
       \PagSeguroLibrary::init();
-      \PagSeguroConfig::init();
-      \PagSeguroResources::init();
+          \PagSeguroConfig::init();
+          \PagSeguroResources::init();
 
       //PagSeguro credentials via dot env file
       $credentials = \PagSeguroConfig::getAccountCredentials();
-      $data = [
-        'sessionid' => \PagSeguroSessionService::getSession($credentials)
+          $data = [
+        'sessionid' => \PagSeguroSessionService::getSession($credentials),
       ];
 
-      $newResponse = $res->withJson($data);
-      return $res->withHeader('Content-type', 'application/json');
+          $newResponse = $res->withJson($data);
 
-    } else {
-      $res = $res->withStatus(403);
-      
-      $newResponse = $res->withJson($data);
-      return $res->withHeader('Content-type', 'application/json');
-    }
+          return $res->withHeader('Content-type', 'application/json');
+      } else {
+          $res = $res->withStatus(403);
+
+          $newResponse = $res->withJson($data);
+
+          return $res->withHeader('Content-type', 'application/json');
+      }
   }
-
 }
